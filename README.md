@@ -1,6 +1,8 @@
 # Python-Gpay-project
+hey this is my python project
 
 def set_pin():
+   
     pin = input("set a 4 digit pin.")
     if len(pin) == 4 and pin.isdigit():
         print("UPI PIN set successfully!")
@@ -10,6 +12,7 @@ def set_pin():
         return set_pin()
 
 def verify_pin(pin):
+  
     for attempt in range(3):
         entered_pin= input("Enter your UPI PIN.")
         if entered_pin == pin:
@@ -19,9 +22,12 @@ def verify_pin(pin):
     print("Too many wrong attempts. Transaction blocked.")
 
 def check_balance(name, balance, pin):
+  
     if verify_pin(pin):
         print(f"{name}, your current balance is {balance}")
+
 def send_money(balance,pin):
+   
     to_user= input("Enter user UPI ID")
     amount= float(input("enter amount to send"))
                         
@@ -38,6 +44,7 @@ def send_money(balance,pin):
     return balance
 
 def receive_money(balance):
+ 
     from_user= input("enter user name")
     amount= float(input("enter received amount"))
     if amount <= 0:
@@ -50,6 +57,7 @@ def receive_money(balance):
         return balance
 
 def Gpay():
+  
     name= "Raj Rathore"
     balance= int(input("enter your amojunt"))
     pin= set_pin()
